@@ -22,6 +22,13 @@ collection = database.get_collection("data")
 def filter_data(data):
     return {"price": data.priceUsd, "volume": data.volume}
 
+@app.get("/")
+
+async def get_urls():
+    urls = {"GET /docs":"Docs of API","GET /data":"Get all data","GET /data/{data_id}":"Get data by id","POST /data":"Create data","PUT /data/{data_id}":"Update data","DELETE /data/{data_id}":"Delete data"}
+    
+    return urls
+
 
 @app.get("/data")
 async def get_data():
