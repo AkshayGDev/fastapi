@@ -1,43 +1,86 @@
-const MongoClient = require('mongodb').MongoClient;
-
-// Connection URL
-const url = 'mongodb://localhost:27017';
-
-// Database Name
-const dbName = 'mydatabase';
-
-// Create a new MongoClient
-const client = new MongoClient(url);
-
-// Use connect method to connect to the Server
-client.connect(function(err) {
-    if (err) {
-        console.error('Error connecting to MongoDB:', err);
-        return;
-    }
-
-    console.log('Connected successfully to MongoDB');
-
-    const db = client.db(dbName);
-
-    // Get the collection
-    const collection = db.collection('pairs');
-
-    // Insert the JSON data
-    const data = {
-        schemaVersion: '1.0.0',
-        pairs: [
-            // ... your JSON data here ...
+{
+  "schemaVersion": "1.0.0",
+  "pairs": [
+    {
+      "chainId": "injective",
+      "dexId": "dojoswap",
+      "url": "https://dexscreener.com/injective/inj17ufy5gqw33t0prwhkwa6ensv0jpj3xfvylgx8j",
+      "pairAddress": "inj17ufy5gqw33t0prwhkwa6ensv0jpj3xfvylgx8j",
+      "baseToken": {
+        "address": "inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw",
+        "name": "Baby DOJO Token",
+        "symbol": "babyDOJO"
+      },
+      "quoteToken": {
+        "address": "inj1zdj9kqnknztl2xclm5ssv25yre09f8908d4923",
+        "name": "Dojo Token",
+        "symbol": "DOJO"
+      },
+      "priceNative": "0.006687",
+      "priceUsd": "0.003883",
+      "txns": {
+        "m5": { "buys": 0, "sells": 4 },
+        "h1": { "buys": 0, "sells": 28 },
+        "h6": { "buys": 10, "sells": 268 },
+        "h24": { "buys": 16, "sells": 859 }
+      },
+      "volume": {
+        "h24": 251061.61,
+        "h6": 113608.95,
+        "h1": 8276.33,
+        "m5": 13.27
+      },
+      "priceChange": { "m5": -0.14, "h1": -4.98, "h6": -8.21, "h24": -3.26 },
+      "liquidity": { "usd": 772000.7, "base": 97964490, "quote": 674227 },
+      "pairCreatedAt": 1710685033000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/injective/inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw.png",
+        "websites": [
+          { "label": "Website", "url": "https://baby.dojo.trading/" },
+          { "label": "Docs", "url": "https://docs.dojo.trading/" },
+          { "label": "Main Site", "url": "https://dojo.trading/" }
+        ],
+        "socials": [
+          { "type": "twitter", "url": "https://twitter.com/Dojo_Swap" },
+          { "type": "telegram", "url": "https://t.me/dojo_swap" }
         ]
-    };
-
-    collection.insertMany(data, function(err, result) {
-        if (err) {
-            console.error('Error inserting data into MongoDB:', err);
-            return;
-        }
-
-        console.log('Data inserted successfully into MongoDB');
-        client.close();
-    });
-});
+      }
+    },
+    {
+      "chainId": "injective",
+      "dexId": "dojoswap",
+      "url": "https://dexscreener.com/injective/inj19ucgk3rghfwu9an5vdl3kxf02h8cguk50042ff",
+      "pairAddress": "inj19ucgk3rghfwu9an5vdl3kxf02h8cguk50042ff",
+      "baseToken": {
+        "address": "inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw",
+        "name": "Baby DOJO Token",
+        "symbol": "babyDOJO"
+      },
+      "quoteToken": { "address": "inj", "name": "Injective", "symbol": "INJ" },
+      "priceNative": "0.0001078",
+      "priceUsd": "0.003897",
+      "txns": {
+        "m5": { "buys": 0, "sells": 0 },
+        "h1": { "buys": 0, "sells": 1 },
+        "h6": { "buys": 0, "sells": 11 },
+        "h24": { "buys": 1, "sells": 26 }
+      },
+      "volume": { "h24": 749.31, "h6": 244.02, "h1": 5.26, "m5": 0 },
+      "priceChange": { "m5": 0, "h1": -4.75, "h6": 4.6, "h24": -8.16 },
+      "liquidity": { "usd": 530.66, "base": 65538, "quote": 7.6163 },
+      "pairCreatedAt": 1710163106000,
+      "info": {
+        "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/injective/inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw.png",
+        "websites": [
+          { "label": "Website", "url": "https://baby.dojo.trading/" },
+          { "label": "Docs", "url": "https://docs.dojo.trading/" },
+          { "label": "Main Site", "url": "https://dojo.trading/" }
+        ],
+        "socials": [
+          { "type": "twitter", "url": "https://twitter.com/Dojo_Swap" },
+          { "type": "telegram", "url": "https://t.me/dojo_swap" }
+        ]
+      }
+    }
+  ]
+}
